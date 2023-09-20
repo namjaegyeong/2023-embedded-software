@@ -31,6 +31,6 @@
 
 ### 7, Target1 폴더에 대해 build target => load 
 
-### 참고
+# 참고
 * https://www.electronicshub.org/setting-up-keil-mdk-for-lpc1768/
 * https://www.youtube.com/watch?v=5KBiw-anwrQ
