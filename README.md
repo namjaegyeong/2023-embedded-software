@@ -42,12 +42,17 @@
 
 ### 6, Source Group 1 폴더 오른쪽 버튼 클릭 => 
 * Add New Item to Group ‘Source Group 1’... =>
-* main.c 파일 추가 후 코드 작성
+* main.c 파일 추가
 
 ![케일설치_7](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/ec8a544e-ec69-4ed1-938e-3785cdb8e033)
 ![케일설치_8](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/b1396b96-a8ec-41e7-9c02-7dcd71775af8)
 
-### 7, Target1 폴더 오른쪽 버튼 클릭 =>
+### 7, 코드 작성 =>
+* main.c 파일에 코드 작성
+
+![코드추가](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/ce7f1ae5-c0ca-4e6d-8b3c-26b091b7cbeb)
+
+### 8, Target1 폴더 오른쪽 버튼 클릭 =>
 * build target => load 
 
 ![케일설치_9](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/c5940f8a-5b37-463a-b691-23a9b4baadc4)
