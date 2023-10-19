@@ -7,7 +7,7 @@
 TIM_TIMERCFG_Type TIM_ConfigStruct;                         //Timer 설정 구조체
 TIM_MATCHCFG_Type TIM_MatchConfigStruct ;                   //Timer 일치 동작 구조체
 
-uint8_t pos;
+uint8_t led;
 
 void Delay(long d_t)
 {
@@ -18,12 +18,15 @@ void Delay(long d_t)
 void TIMER0_IRQHandler(void)
 {
     TIM_ClearIntPending(LPC_TIM0,0);                        //Timer0 인터럽트 클리어
-    //TODO
+    GPIO_ClearValue(2, 0x0000007C);
+    led = led << 1;
 }
 
 int main(void)
 {
     SystemInit();
+
+    led = 0x04;
 
     GPIO_SetDir(1, 0xB0000000, 1);
     GPIO_SetDir(2, 0x0000007C, 1);
@@ -48,8 +51,12 @@ int main(void)
     TIM_Cmd(LPC_TIM0,ENABLE);                               //TIM0 동작
 
     while(1){
-        //TODO
         //타이머0의 타이머 일치 인터럽트를 사용하여 타이머가 일치할 때마다 P2.2 ~ P2.6 순서로 LED가 점등되는 동작을 반복하십시오.
         //각 LED를 켜고 끄는 사이에 딜레이를 주기 위해 Delay(10000); 함수를 사용하십시오.
+        GPIO_SetValue(2, led);
+        Delay(10000);
+       
+        if(led > 0x70)
+            led = 0x04;
     }
 }

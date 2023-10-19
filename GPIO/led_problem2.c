@@ -25,6 +25,15 @@ int main (void)
 
  	while(1)
 	{
-		//TODO				
+		sw = (GPIO_ReadValue(2) & 0x00000400);
+		if(sw == 0x00000000)
+		{
+			GPIO_SetValue(1, 0xB0000000);
+			GPIO_SetValue(2, 0x0000007C);
+		}
+		else{
+			GPIO_ClearValue(1, 0xB0000000); 
+			GPIO_ClearValue(2, 0x0000007C);		
+		}			
 	}
 }

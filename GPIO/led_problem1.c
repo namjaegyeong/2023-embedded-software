@@ -8,6 +8,8 @@
 
 #define LED_NUM     8
 
+const unsigned long led_mask[] = { 1<<28, 1<<29, 1UL<<31, 1<<2, 1<<3, 1<<4, 1<<5, 1<<6 };
+
 void Delay(long d_t)
 {
 	long k;
@@ -29,6 +31,27 @@ int main (void)
 
 	while(1)
 	{
-		//TODO
+   		num += dir;
+		if(num == LED_NUM) 
+		{ 
+			dir = -1; 
+			num =  LED_NUM-1; 
+		}
+		else if(num < 0) 
+		{ 	dir =  1; 
+			num =  0;
+		}
+ 	    if (num < 3){
+			GPIO_SetValue(1, led_mask[num]);
+			Delay(500000);                         
+			GPIO_ClearValue(1, led_mask[num]);
+			Delay(500000);                         
+    	}
+    	else {
+			GPIO_SetValue(2, led_mask[num]);
+			Delay(500000);                         
+			GPIO_ClearValue(2, led_mask[num]);
+			Delay(500000);                         
+		}
 	}
 }
