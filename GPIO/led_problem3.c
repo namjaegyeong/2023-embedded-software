@@ -32,24 +32,20 @@ int main(void)
     while(1)
     {
         // LED 번호(num)가 LED_NUM보다 크거나 같으면 0으로 초기화하여 처음부터 다시 시작하십시오.
-        // 각 LED를 켜고 끄는 사이에 딜레이를 주기 위해 Delay(500000) 함수를 사용하십시오.
+        // 각 LED를 켜고 끄는 사이에 딜레이를 주기 위해 Delay(5000000) 함수를 사용하십시오.
         sw = (GPIO_ReadValue(2) & 0x00000400);
         if(sw == 0x00000000 && state == 0) {
-          num++;
+					state = 1;
           if(num < 3) {
             GPIO_SetValue(1, led_mask[num]);
-            Delay(500000);                         
-            GPIO_ClearValue(1, led_mask[num]);
-            Delay(500000);  
+            Delay(5000000);                         
+            GPIO_ClearValue(1, led_mask[num]); 
           } else if(num < LED_NUM) {
             GPIO_SetValue(2, led_mask[num]);
-            Delay(500000);                         
+            Delay(5000000);                         
             GPIO_ClearValue(2, led_mask[num]);
-            Delay(500000);  
-          } else if(num == LED_NUM) {
-            num = 0;
-          }
-          state = 1;
+          } 
+					num = (num + 1) % LED_NUM;
         } else if(sw != 0x00000000 && state == 1) {
           state = 0;
         }	
