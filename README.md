@@ -16,6 +16,7 @@
 * NXP -> LPC1768 선택
 
 ![케일설치_2](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/efc39e39-7bb7-4647-8318-a1fb923e4403)
+![KakaoTalk_20231101_175223420](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/92912906-6fa6-4c49-a20b-69ae3730601e)
 ![케일설치_3](https://github.com/namjaegyeong/2023-embedded-software/assets/57249939/8578516f-107c-4ab2-abc5-7b232fd57ac6)
 
 ### 3, Manager Run-Time Environment =>
