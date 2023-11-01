@@ -2,6 +2,7 @@
 #include "lpc17xx_mcpwm.h"
 #include "lpc17xx_pinsel.h"
 #include "lpc17xx_libcfg_default.h"
+#include "lpc17xx_clkpwr.h"
 
 //MCPWM 채널 설정 구조체
 MCPWM_CHANNEL_CFG_Type PWMSetup;
