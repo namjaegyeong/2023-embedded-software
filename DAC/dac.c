@@ -9,7 +9,7 @@ int main(void)
       // 구조체 선언 및 변수 초기화
       PINSEL_CFG_Type PinCfg;
       uint32_t time;
-      float rate = 0;               // DAC 값을 업데이트할 때 사용될 비율을 저장하는 변수
+      float rate = 0;               // DAC 값을 업데이트할 때 사용될 값을 저장하는 변수
    
       SystemInit();                 // 시스템 관련 설정 초기화
       
