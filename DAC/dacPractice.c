@@ -18,6 +18,11 @@ void TIMER0_IRQHandler(void)
    // Todo
    // 타이머 인터럽트가 발생할 때 동작을 작성합니다.
    // 시간이 지날 수록 DAC의 출력 전압을 점차 증가해야 합니다.
+
+   g_ulFlags++;
+   
+   if(g_ulFlags == 5)
+      g_ulFlags = 0;
 }
 
 int main(void)
@@ -61,5 +66,45 @@ int main(void)
         // g_ulFlags 값에 따라 다른 DAC 값 범위를 업데이트하는 코드를 작성합니다.
         // DAC의 출력 전압을 점차 증가해야 합니다.
         // 예를 들어, g_ulFlags가 1일 때는 0x0FF까지, 2일 때는 0x1FF까지 증가하게 작성해야 합니다.
+       if(g_ulFlags == 0)
+      {
+         for(time = 1; time < 0x0EF; time++)
+         {   
+            // DAC 값 업데이트, time*rate 계산을 통해 출력 값 조절
+            DAC_UpdateValue(LPC_DAC, (uint32_t)(time * rate));
+         }
+      }
+      else if(g_ulFlags == 1)
+      {
+         for(time = 1; time < 0x0FF; time++)
+         {   
+            // DAC 값 업데이트, time*rate 계산을 통해 출력 값 조절
+            DAC_UpdateValue(LPC_DAC, (uint32_t)(time * rate));
+         }
+      }
+       else if(g_ulFlags == 2)
+      {
+         for(time = 1; time < 0x1FF; time++)
+         {   
+            // DAC 값 업데이트, time*rate 계산을 통해 출력 값 조절
+            DAC_UpdateValue(LPC_DAC, (uint32_t)(time * rate));
+         }
+      }
+       else if(g_ulFlags == 3)
+      {
+         for(time = 1; time < 0x2FF; time++)
+         {   
+            // DAC 값 업데이트, time*rate 계산을 통해 출력 값 조절
+            DAC_UpdateValue(LPC_DAC, (uint32_t)(time * rate));
+         }
+      }
+      else if(g_ulFlags == 4)
+      {
+         for(time = 1; time < 0x3FF; time++)
+         {   
+            // DAC 값 업데이트, time*rate 계산을 통해 출력 값 조절
+            DAC_UpdateValue(LPC_DAC, (uint32_t)(time * rate));
+         }
+      }
     }
 }
