@@ -3,6 +3,7 @@
 #include "lpc17xx_pinsel.h"          // 핀 설정을 위한 헤더 파일
 #include "lpc17xx_libcfg_default.h"  // 기본 라이브러리 구성을 위한 헤더 파일
 #include "debug_frmwrk.h"            // 디버깅 프레임워크를 위한 헤더 파일
+#include "lpc17xx_clkpwr.h"              // 클록 및 전력 관련 기능을 포함하기 위한 헤더 파일
 
 int main(void)
 {
